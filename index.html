@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarterly Earnings — RevealJS</title>
+
+  <!-- Reveal.js from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/black.css" id="theme">
+
+  <!-- Highlight.js default styles (for code highlighting) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <style>
+    /* small styling for footer/email */
+    .presenter-email {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    /* nicer monospace for code blocks */
+    pre code { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- Title slide (HTML) -->
+    <section>
+      <h1>Q3 2025 Quarterly Earnings</h1>
+      <h3>Technical Highlights & Financial Summary</h3>
+      <p class="presenter-email">Contact: 23f1001452@ds.study.iitm.ac.in</p>
+      <aside class="notes">
+        Slide notes: Start with a 30-second overview. Remind stakeholders of agenda.
+      </aside>
+    </section>
+
+    <!-- Markdown slide (uses data-markdown) -->
+    <section data-markdown>
+      <script type="text/template">
+## Agenda (Markdown slide)
+
+- Key financial metrics (Revenue, EBIT, EPS)
+- Variance vs. forecast
+- Outlook & guidance
+- Q&A
+
+> This slide is written in **Markdown**.
+      </script>
+      <aside class="notes">
+        Speaker: Walk through each bullet quickly — keep it high level.
+      </aside>
+    </section>
+
+    <!-- Slide with fragments (animated elements) -->
+    <section>
+      <h2>Revenue Breakdown (Animated)</h2>
+      <ul>
+        <li class="fragment">Retail: ₹ 12.3B</li>
+        <li class="fragment">Wholesale: ₹ 8.7B</li>
+        <li class="fragment">Digital: ₹ 4.1B</li>
+      </ul>
+      <aside class="notes">
+        Reveal each revenue stream one by one. Link to slide with detailed numbers later.
+      </aside>
+    </section>
+
+    <!-- Slide with code sample & syntax highlighting -->
+    <section>
+      <h2>Sample: Financial Data Extraction (Python)</h2>
+      <pre><code class="language-python">
+# Compute revenue from transactions
+def compute_revenue(transactions):
+    # transactions: list of dicts with keys 'qty' and 'price'
+    return sum(t['qty'] * t['price'] for t in transactions)
+
+# Example
+transactions = [{'qty': 10, 'price': 100.0}, {'qty': 5, 'price': 250.0}]
+print(compute_revenue(transactions))  # 2250.0
+      </code></pre>
+      <aside class="notes">
+        Mention that this snippet is illustrative. Production code would include currency handling, auditing, and logging.
+      </aside>
+    </section>
+
+    <!-- Slide with math (MathJax) -->
+    <section>
+      <h2>Financial Formula</h2>
+      <p>
+        Earnings Per Share (EPS) — basic formula:
+      </p>
+      <p>
+        $$ \text{EPS} = \frac{\text{Net Income} - \text{Preferred Dividends}}{\text{Weighted Average Shares Outstanding}} $$
+      </p>
+      <p class="fragment">Use EPS to compare profitability on a per-share basis.</p>
+      <aside class="notes">
+        Show the EPS calculation for the quarter. Mention any one-off items that impacted Net Income.
+      </aside>
+    </section>
+
+    <!-- Closing slide -->
+    <section>
+      <h2>Questions?</h2>
+      <p>Contact: 23f1001452@ds.study.iitm.ac.in</p>
+      <aside class="notes">
+        Open for Q&A. Provide follow-up action items after meeting.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js and plugins -->
+<script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
+
+<!-- Plugins: markdown, highlight, math, notes -->
+<script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
+
+<!-- Highlight.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script>
+  // Initialize Reveal
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: true,
+    slideNumber: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+    // Math config fallback if KaTeX missing — RevealMath will try KaTeX then MathJax
+    math: {
+      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'
+    },
+    // Highlight.js auto-detect
+    highlight: {
+      highlightOnLoad: true
+    }
+  });
+</script>
+
+</body>
+</html>
