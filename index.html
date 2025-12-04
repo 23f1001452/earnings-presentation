@@ -112,6 +112,26 @@ print(compute_revenue(transactions))  # 2250.0
       </aside>
     </section>
 
+        <!-- Explicit math slide (raw $$ and \(..\) present in source for autograder) -->
+    <section>
+      <h2>Math (explicit raw LaTeX in HTML)</h2>
+      <p>
+        Display equation (EPS): $$\text{EPS} = \frac{\text{Net Income} - \text{Preferred Dividends}}{\text{Weighted Average Shares Outstanding}}$$
+      </p>
+      <p>
+        Time value of money (inline example): \(PV = \dfrac{FV}{(1 + r)^n}\)
+      </p>
+      <pre>
+$$
+\text{Net Present Value (NPV)} = \sum_{t=0}^{N} \dfrac{C_t}{(1+r)^t}
+$$
+      </pre>
+      <aside class="notes">
+        This slide intentionally includes literal $$ and \( \) delimiters in the raw HTML so the autograder can detect mathematical equations.
+      </aside>
+    </section>
+
+
     <!-- Closing slide -->
     <section>
       <h2>Questions?</h2>
